@@ -5,12 +5,15 @@ import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
 import ProductCard from "./ProductCard";
 import { products } from "@/lib/products";
+import SummaryCards from "./SummaryCards";
+import MarketFilter from "./MarketFilter";
 
 export default function Dashboard(){
 
 const[search,setSearch]=useState("");
 
 const[category,setCategory]=useState("All");
+const [market,setMarket]=useState("All");
 
 const filtered=useMemo(()=>{
 
@@ -26,7 +29,13 @@ const matchesSearch=
 
 item.name.toLowerCase().includes(search.toLowerCase());
 
-return matchesCategory && matchesSearch;
+const matchesMarket =
+market==="All" ||
+item.market===market;
+
+return matchesCategory &&
+matchesSearch &&
+matchesMarket;
 
 });
 
@@ -49,7 +58,9 @@ Market Dashboard
 Track agricultural prices across multiple markets.
 
 </p>
-
+<div className="mt-10">
+  <SummaryCards />
+</div>
 <div className="mt-10">
 
 <SearchBar
@@ -62,15 +73,17 @@ onChange={setSearch}
 
 </div>
 
-<div className="mt-8">
+<div className="mt-8 flex flex-wrap items-center gap-4">
 
-<FilterBar
+  <FilterBar
+    category={category}
+    setCategory={setCategory}
+  />
 
-category={category}
-
-setCategory={setCategory}
-
-/>
+  <MarketFilter
+    market={market}
+    setMarket={setMarket}
+  />
 
 </div>
 
