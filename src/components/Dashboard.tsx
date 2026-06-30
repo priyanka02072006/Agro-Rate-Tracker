@@ -133,21 +133,23 @@ product={product}
 </div>
 
 </div>
-<div className="grid lg:grid-cols-2 gap-8 mt-14">
 <div className="grid lg:grid-cols-3 gap-8 mt-14">
 
   <div className="lg:col-span-2">
-
     <FeaturedCrop />
-
   </div>
 
   <MiniStats />
 
 </div>
+
+<div className="grid lg:grid-cols-2 gap-8 mt-14">
+
   <MarketComparison />
 
   <PriceHistoryTable />
+
+</div>
 
 </div>
 
