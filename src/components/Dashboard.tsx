@@ -9,6 +9,8 @@ import SummaryCards from "./SummaryCards";
 import MarketFilter from "./MarketFilter";
 import PriceChart from "./PriceChart";
 import TrendCard from "./TrendCard";
+import TopMovers from "./TopMovers";
+import ActivityFeed from "./ActivityFeed";
 
 export default function Dashboard(){
 
@@ -116,6 +118,13 @@ product={product}
 ))
 
 }
+
+</div>
+<div className="grid lg:grid-cols-2 gap-8 mt-14">
+
+  <TopMovers />
+
+  <ActivityFeed />
 
 </div>
 
