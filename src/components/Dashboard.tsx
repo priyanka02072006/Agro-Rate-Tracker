@@ -11,6 +11,8 @@ import PriceChart from "./PriceChart";
 import TrendCard from "./TrendCard";
 import TopMovers from "./TopMovers";
 import ActivityFeed from "./ActivityFeed";
+import MarketComparison from "./MarketComparison";
+import PriceHistoryTable from "./PriceHistoryTable";
 
 export default function Dashboard(){
 
@@ -127,6 +129,13 @@ product={product}
   <ActivityFeed />
 
 </div>
+
+</div>
+<div className="grid lg:grid-cols-2 gap-8 mt-14">
+
+  <MarketComparison />
+
+  <PriceHistoryTable />
 
 </div>
 
