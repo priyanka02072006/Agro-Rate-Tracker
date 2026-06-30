@@ -13,6 +13,8 @@ import TopMovers from "./TopMovers";
 import ActivityFeed from "./ActivityFeed";
 import MarketComparison from "./MarketComparison";
 import PriceHistoryTable from "./PriceHistoryTable";
+import FeaturedCrop from "./FeaturedCrop";
+import MiniStats from "./MiniStats";
 
 export default function Dashboard(){
 
@@ -132,7 +134,17 @@ product={product}
 
 </div>
 <div className="grid lg:grid-cols-2 gap-8 mt-14">
+<div className="grid lg:grid-cols-3 gap-8 mt-14">
 
+  <div className="lg:col-span-2">
+
+    <FeaturedCrop />
+
+  </div>
+
+  <MiniStats />
+
+</div>
   <MarketComparison />
 
   <PriceHistoryTable />
