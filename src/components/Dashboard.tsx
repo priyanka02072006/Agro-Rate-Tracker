@@ -7,6 +7,8 @@ import ProductCard from "./ProductCard";
 import { products } from "@/lib/products";
 import SummaryCards from "./SummaryCards";
 import MarketFilter from "./MarketFilter";
+import PriceChart from "./PriceChart";
+import TrendCard from "./TrendCard";
 
 export default function Dashboard(){
 
@@ -86,7 +88,17 @@ onChange={setSearch}
   />
 
 </div>
+<div className="grid lg:grid-cols-3 gap-8 mt-12">
 
+  <div className="lg:col-span-2">
+
+    <PriceChart />
+
+  </div>
+
+  <TrendCard />
+
+</div>
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
 {
