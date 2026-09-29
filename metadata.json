@@ -1,0 +1,6 @@
+{
+  "name": "Agro Rate Tracker",
+  "description": "Agricultural market-intelligence platform and farmer-to-customer deal marketplace for India, powered by daily Agmarknet mandi price feeds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

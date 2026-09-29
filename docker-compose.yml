@@ -1,0 +1,20 @@
+services:
+  agrorate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agro-rate-tracker
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - DATA_GOV_IN_API_KEY=${DATA_GOV_IN_API_KEY:-}
+      - DATA_GOV_IN_RESOURCE_ID=${DATA_GOV_IN_RESOURCE_ID:-9ef84268-d588-465a-a308-a864a43d0070}
+    volumes:
+      - agro-data:/app/.data
+
+volumes:
+  agro-data:
+    driver: local
